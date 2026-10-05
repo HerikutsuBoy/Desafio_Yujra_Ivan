@@ -18,18 +18,16 @@
   --crema: #F2E8D5;
   --verde-madidi: #4A5D3A;
   --blanco-calido: #FBF7F0;
-
-  --fuente-titular: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-  --fuente-texto: "Trebuchet MS", Verdana, Arial, sans-serif;
-
+--fuente-titular: "Playfair Display", Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  --fuente-texto: "Nunito Sans", "Trebuchet MS", Verdana, Arial, sans-serif;
   --ancho-contenido: min(72rem, 94vw);
   --espacio-seccion: clamp(1.75rem, 1.1rem + 3vw, 4rem);
 }
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   background-color: var(--crema);
@@ -92,6 +90,67 @@ summary:focus-visible {
   vertical-align: middle;
   padding-left: clamp(1rem, 3vw, 3rem);
   padding-right: clamp(1rem, 3vw, 3rem);
+}
+/* ---------------------------------------------------------
+   Botón de desplazamiento (menú de secciones)
+   --------------------------------------------------------- */
+.navbar {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  position: relative;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-boton {
+  display: inline-block;
+  padding: 0.5em 1.1em;
+  background-color: var(--verde-madidi);
+  color: var(--blanco-calido);
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.menu-boton:hover {
+  background-color: var(--marron-cafe);
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  margin: 0.5em 0 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  background-color: var(--blanco-calido);
+  border: 1px solid var(--tostado);
+  min-width: 10rem;
+  z-index: 10;
+}
+
+.menu li {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 0.6em 1em;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--marron-oscuro);
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background-color: var(--crema);
+}
+
+#menu-toggle:checked ~ .menu {
+  display: block;
 }
 
 .marca {
@@ -388,6 +447,30 @@ a.cta:focus-visible {
   padding-top: clamp(1.25rem, 1rem + 1vw, 2rem);
   padding-bottom: clamp(1.25rem, 1rem + 1vw, 2rem);
 }
+/* ---------------------------------------------------------
+   Redes sociales
+   --------------------------------------------------------- */
+.redes {
+  margin-top: 1em;
+}
+
+.redes a {
+  display: inline-block;
+  width: 2.4em;
+  height: 2.4em;
+  line-height: 2.4em;
+  text-align: center;
+  margin-right: 0.6em;
+  background-color: var(--verde-madidi);
+  color: var(--blanco-calido);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.redes a:hover,
+.redes a:focus-visible {
+  background-color: var(--marron-cafe);
+}
 
 .pie address {
   font-style: normal;
@@ -433,4 +516,54 @@ a.cta:focus-visible {
 .whatsapp-flotante:hover,
 .whatsapp-flotante:focus-visible {
   background-color: var(--marron-cafe);
+}
+/* ---------------------------------------------------------
+   MEDIA QUERY 1: tablets
+   --------------------------------------------------------- */
+@media (max-width: 768px) {
+  .cabecera {
+    display: block;
+    text-align: center;
+  }
+
+  .cabecera .marca,
+  .cabecera nav {
+    display: block;
+    width: 100%;
+    padding: 0.3em 1em;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .menu {
+    left: 0;
+    right: 0;
+    margin: 0.5em auto 0;
+  }
+
+  .tienda-grid > li {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ---------------------------------------------------------
+   MEDIA QUERY 2: celulares
+   --------------------------------------------------------- */
+@media (max-width: 480px) {
+  .stats__item {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  th, td {
+    font-size: 0.78rem;
+    padding: 0.4em 0.3em;
+  }
+
+  .whatsapp-flotante span {
+    display: none;
+  }
 }
