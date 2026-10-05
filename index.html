@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alexander Coffee — Café de especialidad boliviano desde 1996</title>
 <meta name="description" content="Alexander Coffee: cafetería boliviana fundada en 1996 en La Paz. Carta, origen del café del Madidi, red de sucursales, tienda y cultura organizacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -16,8 +20,10 @@
     <h1>Alexander Coffee</h1>
     <p>Café de especialidad boliviano · La Paz desde 1996</p>
   </hgroup>
-  <nav aria-label="Navegación principal">
-    <ul>
+  <nav class="navbar" aria-label="Navegación principal">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-boton">☰ Secciones</label>
+    <ul class="menu">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#carta">Carta</a></li>
       <li><a href="#origen">Origen</a></li>
@@ -258,6 +264,12 @@
     Oficina Central: Calle Juan de Vargas Nº 2370, Miraflores · <a href="tel:+59122221259">(591-2) 2221259</a>
   </address>
   <p>&copy; <time datetime="1996">1996</time>–<time datetime="2026">2026</time> Alexander Coffee. Café de especialidad boliviano.</p>
+  <div class="redes">
+    <a href="https://www.facebook.com/AlexanderCoffeeBolivia" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/alexandercoffeebolivia/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/59176762583" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/search?q=alexander%20coffee%20bolivia" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
 </footer>
 
 <a class="whatsapp-flotante" href="https://wa.me/59176762583?text=Hola%2C%20quisiera%20consultar%20sobre%20banquetes%20o%20pedidos%20institucionales" aria-label="Contactar a Alexander Coffee por WhatsApp para banquetes y pedidos institucionales">
